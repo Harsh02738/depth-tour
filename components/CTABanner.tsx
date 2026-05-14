@@ -1,21 +1,44 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import MagneticBtn from "@/components/MagneticBtn";
+
 export default function CTABanner() {
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    if (!svgRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          svgRef.current?.querySelectorAll("circle").forEach((c, i) => {
+            c.style.animationPlayState = "running";
+          });
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(svgRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="cta"
       className="py-36 px-6 relative overflow-hidden"
-      style={{ background: "#050505", borderTop: "1px solid rgba(255,255,255,0.04)" }}
+      style={{
+        background: "#050505",
+        borderTop: "1px solid rgba(255,255,255,0.04)",
+      }}
     >
-      {/* Aurora orb 1 */}
+      {/* Aurora orbs */}
       <div
         className="absolute top-[-20%] left-[-5%] w-[600px] h-[600px] rounded-full pointer-events-none animate-aurora"
         style={{
-          background: "radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(99,102,241,0.32) 0%, transparent 65%)",
           filter: "blur(70px)",
         }}
       />
-      {/* Aurora orb 2 */}
       <div
         className="absolute bottom-[-20%] right-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none animate-aurora"
         style={{
@@ -24,52 +47,75 @@ export default function CTABanner() {
           animationDelay: "-6s",
         }}
       />
-      {/* Aurora orb 3 */}
-      <div
-        className="absolute top-[30%] right-[20%] w-[400px] h-[400px] rounded-full pointer-events-none animate-aurora"
-        style={{
-          background: "radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 65%)",
-          filter: "blur(60px)",
-          animationDelay: "-11s",
-        }}
-      />
+
+      {/* SVG concentric circles — draw on scroll */}
+      <svg
+        ref={svgRef}
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        viewBox="0 0 900 500"
+        preserveAspectRatio="xMidYMid slice"
+        aria-hidden={true}
+      >
+        {[80, 160, 240, 320, 400].map((r, i) => {
+          const circumference = 2 * Math.PI * r;
+          return (
+            <circle
+              key={r}
+              cx="450"
+              cy="250"
+              r={r}
+              fill="none"
+              stroke="rgba(99,102,241,0.1)"
+              strokeWidth="1"
+              strokeDasharray={circumference}
+              strokeDashoffset={circumference}
+              style={{
+                animation: `drawCircle 1.8s ${i * 0.28}s ease forwards`,
+                animationPlayState: "paused",
+              }}
+            />
+          );
+        })}
+      </svg>
 
       <div className="relative z-10 max-w-3xl mx-auto text-center reveal">
         <p
-          className="text-xs font-semibold tracking-[0.2em] uppercase mb-6"
+          className="text-xs font-semibold tracking-[0.22em] uppercase mb-6"
           style={{ color: "#6366f1" }}
         >
           Ready to stand out?
         </p>
-        <h2 className="text-4xl md:text-6xl font-bold text-[#f5f0e8] tracking-tight mb-6 leading-tight">
-          Be the first agent in your
+
+        <h2
+          className="font-bold text-[#f5f0e8] tracking-tight mb-6 leading-tight"
+          style={{ fontSize: "clamp(36px, 5.5vw, 68px)" }}
+        >
+          Be the first agent
           <br />
-          <span className="gradient-text">market with this.</span>
+          in your market{" "}
+          <span className="gradient-text">with this.</span>
         </h2>
-        <p className="text-lg mb-12 max-w-xl mx-auto leading-relaxed" style={{ color: "#666666" }}>
+
+        <p
+          className="text-lg mb-12 max-w-xl mx-auto leading-relaxed"
+          style={{ color: "#555555" }}
+        >
           Ten outreach messages gets you one client. One client gets you the
           next three.
         </p>
 
-        <a
+        <MagneticBtn
           href="#book"
-          className="relative inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-12 py-5 rounded-full text-lg transition-all"
+          className="relative inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-14 py-5 rounded-full text-lg transition-colors"
           style={{
-            boxShadow: "0 0 40px rgba(99,102,241,0.55), 0 0 80px rgba(99,102,241,0.2)",
+            boxShadow:
+              "0 0 40px rgba(99,102,241,0.6), 0 0 80px rgba(99,102,241,0.25)",
           }}
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.boxShadow =
-              "0 0 60px rgba(99,102,241,0.75), 0 0 100px rgba(99,102,241,0.3)")
-          }
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.boxShadow =
-              "0 0 40px rgba(99,102,241,0.55), 0 0 80px rgba(99,102,241,0.2)")
-          }
         >
           Book a Scan Today →
-        </a>
+        </MagneticBtn>
 
-        <p className="text-sm mt-6" style={{ color: "#333333" }}>
+        <p className="text-sm mt-6" style={{ color: "#2a2a2a" }}>
           First scan at half price for new clients.
         </p>
       </div>

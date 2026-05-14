@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import MagneticBtn from "@/components/MagneticBtn";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,14 +15,18 @@ export default function Nav() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-card border-b" : "bg-transparent border-transparent"
+        scrolled ? "glass-card border-b" : "bg-transparent"
       }`}
-      style={scrolled ? { borderColor: "rgba(255,255,255,0.06)" } : {}}
+      style={
+        scrolled
+          ? { borderColor: "rgba(255,255,255,0.06)" }
+          : { borderColor: "transparent" }
+      }
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <span className="font-bold text-xl tracking-tight gradient-text">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#" className="font-bold text-xl tracking-tight gradient-text">
           DepthTour
-        </span>
+        </a>
 
         <div className="hidden md:flex items-center gap-8">
           {[
@@ -33,22 +38,26 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               className="text-sm transition-colors"
-              style={{ color: "#666666" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f0e8")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#666666")}
+              style={{ color: "#555" }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.color = "#f5f0e8")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = "#555")
+              }
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        <a
+        <MagneticBtn
           href="#book"
-          className="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all"
-          style={{ boxShadow: "0 0 20px rgba(99,102,241,0.4)" }}
+          className="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
+          style={{ boxShadow: "0 0 20px rgba(99,102,241,0.45)" }}
         >
           Book a Scan →
-        </a>
+        </MagneticBtn>
       </div>
     </nav>
   );
