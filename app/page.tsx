@@ -7,10 +7,12 @@ import BookingForm from "@/components/BookingForm";
 import FAQ from "@/components/FAQ";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Page() {
   return (
     <>
+      <ScrollReveal />
       <Nav />
       <main>
         <Hero />

@@ -1,54 +1,91 @@
+"use client";
+
 export default function Footer() {
   return (
     <footer
-      className="border-t px-6 py-12"
-      style={{ borderColor: "#1a1a1a", background: "#080808" }}
+      className="px-6 py-14"
+      style={{
+        background: "#050505",
+        borderTop: "1px solid rgba(255,255,255,0.05)",
+      }}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8 mb-10">
+        <div className="grid md:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
-          <div className="md:col-span-2">
-            <p className="text-[#f5f0e8] font-bold text-lg mb-2">DepthTour</p>
-            <p className="text-[#555555] text-sm mb-4">
+          <div className="md:col-span-1">
+            <p className="font-bold text-xl mb-2 gradient-text">DepthTour</p>
+            <p className="text-sm leading-relaxed" style={{ color: "#444444" }}>
               Photoreal 3D tours. Just a link.
             </p>
           </div>
 
-          {/* Links */}
+          {/* Navigate */}
           <div className="flex flex-col gap-3">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "#333333" }}>
+            <p
+              className="text-xs font-semibold tracking-[0.15em] uppercase mb-1"
+              style={{ color: "#2a2a2a" }}
+            >
               Navigate
             </p>
-            <a href="#how-it-works" className="text-[#555555] hover:text-[#f5f0e8] text-sm transition-colors">How it works</a>
-            <a href="#book" className="text-[#555555] hover:text-[#f5f0e8] text-sm transition-colors">Book a Scan</a>
-            <a href="#faq" className="text-[#555555] hover:text-[#f5f0e8] text-sm transition-colors">FAQ</a>
+            {[
+              { label: "How it works", href: "#how-it-works" },
+              { label: "Book a Scan",  href: "#book" },
+              { label: "FAQ",          href: "#faq" },
+            ].map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm transition-colors"
+                style={{ color: "#444444" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f0e8")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#444444")}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
           {/* Contact */}
           <div className="flex flex-col gap-3">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "#333333" }}>
+            <p
+              className="text-xs font-semibold tracking-[0.15em] uppercase mb-1"
+              style={{ color: "#2a2a2a" }}
+            >
               Contact Us
             </p>
             <a
               href="mailto:harshshah1012004@gmail.com"
-              className="text-[#555555] hover:text-[#f5f0e8] text-sm transition-colors break-all"
+              className="text-sm transition-colors break-all"
+              style={{ color: "#444444" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f0e8")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#444444")}
             >
               harshshah1012004@gmail.com
             </a>
             <a
-              href="tel:+918849248513"
-              className="text-[#555555] hover:text-[#f5f0e8] text-sm transition-colors"
+              href="#"
+              className="text-sm transition-colors"
+              style={{ color: "#444444" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f0e8")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#444444")}
             >
-              +91 88492 48513
+              Instagram ↗
             </a>
-            <a href="#" className="text-[#555555] hover:text-[#f5f0e8] text-sm transition-colors">Instagram ↗</a>
-            <a href="#" className="text-[#555555] hover:text-[#f5f0e8] text-sm transition-colors">LinkedIn ↗</a>
+            <a
+              href="#"
+              className="text-sm transition-colors"
+              style={{ color: "#444444" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f0e8")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#444444")}
+            >
+              LinkedIn ↗
+            </a>
           </div>
         </div>
 
         <div
           className="border-t pt-6 text-xs"
-          style={{ borderColor: "#1a1a1a", color: "#333333" }}
+          style={{ borderColor: "rgba(255,255,255,0.04)", color: "#2a2a2a" }}
         >
           © 2026 DepthTour. All rights reserved.
         </div>
