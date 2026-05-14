@@ -36,7 +36,7 @@ export default function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center mb-10">
           <a
-            href="#cta"
+            href="#book"
             className="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-7 py-3.5 rounded-full transition-colors text-base"
           >
             Book Your First Scan →

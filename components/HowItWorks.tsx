@@ -1,24 +1,21 @@
 const steps = [
   {
     number: "01",
-    icon: "📸",
-    title: "Capture",
+    title: "Book a Visit",
     description:
-      "We walk your property with an iPhone and capture 200–500 photos or 4K video. Takes 60–90 minutes per property.",
+      "Pick a date. We come to your listing — no setup, no preparation needed on your end. Just unlock the door.",
   },
   {
     number: "02",
-    icon: "⚡",
-    title: "Process",
+    title: "We Handle Everything",
     description:
-      "AI converts your photos into millions of 3D light blobs — a photorealistic, navigable space buyers can explore in their browser.",
+      "Our team spends time at the property and has your 3D tour ready within hours. No back-and-forth, no waiting days.",
   },
   {
     number: "03",
-    icon: "🔗",
-    title: "Deliver",
+    title: "Share. Impress. Win.",
     description:
-      "You get a shareable link. Buyers open it on their phone, no app download required, and walk the property in full 3D.",
+      "Send your buyers one link. They walk through every room in full depth — on any device, before they've set foot inside.",
   },
 ];
 
@@ -28,12 +25,12 @@ export default function HowItWorks() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-indigo-400 text-sm font-medium tracking-widest uppercase mb-4">
-            Process
+            How it works
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-[#f5f0e8] tracking-tight">
-            From phone to published link
+            From booking to published tour.
             <br />
-            in under 2 hours.
+            Same day.
           </h2>
         </div>
 
@@ -44,15 +41,12 @@ export default function HowItWorks() {
               className="rounded-2xl p-8 border"
               style={{ background: "#111111", borderColor: "#222222" }}
             >
-              <div className="flex items-start justify-between mb-6">
-                <span className="text-3xl">{step.icon}</span>
-                <span
-                  className="text-5xl font-bold"
-                  style={{ color: "#1e1e1e" }}
-                >
-                  {step.number}
-                </span>
-              </div>
+              <span
+                className="block text-6xl font-bold mb-6"
+                style={{ color: "#1e1e1e" }}
+              >
+                {step.number}
+              </span>
               <h3 className="text-xl font-semibold text-[#f5f0e8] mb-3">
                 {step.title}
               </h3>

@@ -32,10 +32,10 @@ export default function Nav() {
             How it works
           </a>
           <a
-            href="#pricing"
+            href="#book"
             className="text-[#888888] hover:text-[#f5f0e8] text-sm transition-colors"
           >
-            Pricing
+            Book a Scan
           </a>
           <a
             href="#faq"
@@ -46,7 +46,7 @@ export default function Nav() {
         </div>
 
         <a
-          href="#cta"
+          href="#book"
           className="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-full transition-colors"
         >
           Book a Scan →

@@ -26,7 +26,7 @@ export default function CTABanner() {
         </p>
 
         <a
-          href="mailto:contact@depthtour.com"
+          href="#book"
           className="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors"
         >
           Book a Scan Today →
