@@ -1,263 +1,205 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Luxury Monochrome Palette ── */
-  --color-void: #090909;
-  --color-abyss: #111111;
-  --color-charcoal: #1a1a1a;
-  --color-carbon: #242424;
-  --color-stone: #363636;
-  --color-fog: #6b6b6b;
-  --color-mist: #969696;
-  --color-ash: #b8b8b8;
-  --color-cream: #e8e3da;
-  --color-ivory: #f5f2ee;
-  --color-gold: #c4a882;
-  --color-gold-dim: #8a7560;
-
-  /* ── Typography ── */
-  --font-display: var(--font-cormorant);
-  --font-body: var(--font-inter);
+  --color-brand-bg: #050505;
+  --color-brand-surface: #0f0f0f;
+  --color-brand-border: #1a1a1a;
+  --color-brand-text: #f5f0e8;
+  --color-brand-muted: #888888;
+  --color-brand-accent: #6366f1;
+  --color-brand-accent-hover: #4f46e5;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
-/* ─── Reset & Base ─── */
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
-  scroll-behavior: auto; /* Lenis handles smooth scrolling */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #090909;
-  color: #f5f2ee;
-  font-family: var(--font-inter), system-ui, sans-serif;
+  background-color: #050505;
+  color: #f5f0e8;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  line-height: 1.6;
 }
 
-/* ─── Custom Cursor (pointer devices only) ─── */
-@media (hover: hover) {
-  html,
-  a,
-  button {
-    cursor: none !important;
-  }
-}
-
-.cur-dot {
-  position: fixed;
-  width: 6px;
-  height: 6px;
-  background: #f5f2ee;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  transition: transform 0.05s ease, opacity 0.3s ease;
-  mix-blend-mode: difference;
-}
-
-.cur-ring {
-  position: fixed;
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(196, 168, 130, 0.6);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99998;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
-}
-
-.cur-ring.cur-hover {
-  width: 52px;
-  height: 52px;
-  border-color: rgba(196, 168, 130, 1);
-}
-
-/* ─── Typography Utilities ─── */
-.font-display {
-  font-family: var(--font-cormorant), Georgia, serif;
-}
-
-.font-body {
-  font-family: var(--font-inter), system-ui, sans-serif;
-}
-
-/* ─── Grain Overlay ─── */
-.grain-overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9990;
-  opacity: 0.038;
-  filter: url(#grain-filter);
-  background: #d8d8d8;
-  mix-blend-mode: overlay;
-}
-
-/* ─── Glass Card ─── */
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* ─── Architectural divider ─── */
-.arch-divider {
-  width: 40px;
-  height: 1px;
-  background: #c4a882;
-}
-
-/* ─── Scroll Progress ─── */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 1px;
-  background: #c4a882;
-  z-index: 99997;
-  transform-origin: left center;
-}
-
-/* ─── Loading Screen ─── */
-.loading-screen {
-  position: fixed;
-  inset: 0;
-  background: #090909;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-/* ─── Nav Menu Overlay ─── */
-.menu-overlay {
-  position: fixed;
-  inset: 0;
-  background: #090909;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-}
-
-/* ─── Section Utility ─── */
-.section-label {
-  font-family: var(--font-inter), system-ui, sans-serif;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #6b6b6b;
-}
-
-/* ─── Marquee ─── */
+/* ─── Ticker marquee ─── */
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 60s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
-/* ─── Reveal on scroll ─── */
+/* ─── Hero fade-in ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* ─── Aurora orb float ─── */
+@keyframes auroraFloat {
+  0%,  100% { transform: translate(0, 0)    scale(1);    }
+  33%        { transform: translate(30px, -24px) scale(1.06); }
+  66%        { transform: translate(-22px, 18px) scale(0.96); }
+}
+.animate-aurora {
+  animation: auroraFloat 14s ease-in-out infinite;
+}
+
+/* ─── Animated gradient text ─── */
+@keyframes gradientShift {
+  0%,  100% { background-position: 0%   center; }
+  50%        { background-position: 100% center; }
+}
+.gradient-text {
+  background: linear-gradient(90deg, #818cf8, #a78bfa, #22d3ee, #a78bfa, #818cf8);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 7s ease infinite;
+}
+
+/* ─── Blueprint grid overlay ─── */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* ─── Glassmorphism card ─── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.glass-card-hover:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.08);
+  transform: translateY(-3px);
+}
+
+/* ─── Scroll reveal ─── */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
-.reveal-delay-1 { transition-delay: 0.12s; }
-.reveal-delay-2 { transition-delay: 0.24s; }
-.reveal-delay-3 { transition-delay: 0.36s; }
-.reveal-delay-4 { transition-delay: 0.48s; }
-.reveal-delay-5 { transition-delay: 0.60s; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
 
-/* ─── Image hover zoom ─── */
-.img-zoom {
-  overflow: hidden;
+/* ─── Glow button pulse ring ─── */
+@keyframes pulseRing {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0;   }
 }
-.img-zoom img {
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.img-zoom:hover img {
-  transform: scale(1.06);
-}
-
-/* ─── Grayscale to color on hover ─── */
-.img-grayscale img {
-  filter: grayscale(100%) brightness(0.7);
-  transition: filter 0.6s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.img-grayscale:hover img {
-  filter: grayscale(0%) brightness(1);
-  transform: scale(1.04);
-}
-
-/* ─── Line decoration ─── */
-.line-accent {
-  display: inline-block;
-  width: 1px;
-  height: 48px;
-  background: rgba(196, 168, 130, 0.4);
-}
-
-/* ─── Gold gradient text ─── */
-.gold-text {
-  background: linear-gradient(135deg, #c4a882 0%, #f5f2ee 50%, #c4a882 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ─── Horizontal scroll container ─── */
-.horizontal-track {
-  display: flex;
-  gap: 1.5rem;
-  width: max-content;
-}
-
-/* ─── Process line animation ─── */
-@keyframes lineGrow {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-
-/* ─── SVG grain filter ─── */
-.grain-svg {
+.glow-ring::before {
+  content: '';
   position: absolute;
-  width: 0;
-  height: 0;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(99, 102, 241, 0.5);
+  animation: pulseRing 2s ease-out infinite;
   pointer-events: none;
 }
 
-/* ─── Full-height section ─── */
-.full-h {
-  min-height: 100svh;
+/* ─── Custom cursor (desktop hover only) ─── */
+@media (hover: hover) {
+  html, a, button { cursor: none !important; }
 }
 
-/* ─── Elegant border-top section separator ─── */
-.border-arch {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+.cur-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  top: 0; left: 0;
+}
+
+.cur-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(99, 102, 241, 0.75);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  top: 0; left: 0;
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.2s ease;
+}
+
+.cur-ring.cur-hover {
+  width: 58px;
+  height: 58px;
+  border-color: rgba(99, 102, 241, 1);
+}
+
+/* ─── Floating particles ─── */
+@keyframes particleDrift {
+  0%   { transform: translateY(0)     translateX(0)    scale(1);   opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { transform: translateY(-130px) translateX(28px) scale(0.4); opacity: 0; }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.5);
+  animation: particleDrift linear infinite;
+  pointer-events: none;
+}
+
+/* ─── SVG circle draw ─── */
+@keyframes drawCircle {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ─── Scan line ─── */
+@keyframes scanLine {
+  0%   { transform: translateY(-10%); opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { transform: translateY(110%);  opacity: 0; }
+}
+
+/* ─── Dot pulse ─── */
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.15; transform: scale(1);    }
+  50%       { opacity: 0.9;  transform: scale(1.4); }
+}
+
+/* ─── Subtle spin ─── */
+@keyframes slowSpin {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+@keyframes slowSpinReverse {
+  from { transform: rotate(0deg);    }
+  to   { transform: rotate(-360deg); }
 }
