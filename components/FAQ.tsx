@@ -20,12 +20,12 @@ const faqs = [
     a: "On-site capture takes 60–90 minutes depending on property size. Your shareable tour link is delivered the same day we visit.",
   },
   {
-    q: "Do I need to provide any equipment?",
-    a: "Nothing. We bring everything. No scanner to rent, no special phone, no tripod. Just give us access to the property and we handle the rest.",
+    q: "Do you cover cities across India?",
+    a: "We currently serve Mumbai, Delhi NCR, Bangalore, Hyderabad, and Pune. Expanding to more cities — message us to check your area.",
   },
   {
-    q: "What devices can buyers use to view the tour?",
-    a: "Any modern device — iPhone, Android, laptop, desktop. The tour opens directly in Safari, Chrome, or Firefox. No app download, no account, no headset required.",
+    q: "Can NRI buyers view the tour from abroad?",
+    a: "Yes. The tour is just a browser link — no download required. Buyers in Dubai, Singapore, London, or the US can walk through any property on any device, any time.",
   },
 ];
 

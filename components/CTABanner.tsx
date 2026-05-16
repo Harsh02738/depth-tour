@@ -100,9 +100,9 @@ export default function CTABanner() {
           className="text-lg mb-12 max-w-xl mx-auto leading-relaxed"
           style={{ color: "#555555" }}
         >
-          Right now, your market probably has zero operators offering Gaussian
-          Splatting tours. That changes in 12 months. First mover wins the
-          referral loop.
+          Right now, there is not a single operator in India offering Gaussian
+          Splatting tours commercially. That window closes in 12 months. The
+          first agent or builder who uses this owns their market.
         </p>
 
         <MagneticBtn

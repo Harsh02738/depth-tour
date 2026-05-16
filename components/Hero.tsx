@@ -130,7 +130,7 @@ export default function Hero() {
                   boxShadow: "0 0 8px rgba(129,140,248,0.9)",
                 }}
               />
-              Gaussian Splatting · Now available
+              Gaussian Splatting · Now in India
             </div>
 
             {/* Scramble headline */}
@@ -190,7 +190,7 @@ export default function Hero() {
               {[
                 { icon: "✓", text: "Photoreal depth" },
                 { icon: "✓", text: "Same-day delivery" },
-                { icon: "✓", text: "Any device" },
+                { icon: "✓", text: "Mumbai · Delhi · Bangalore" },
               ].map((item) => (
                 <div
                   key={item.text}
