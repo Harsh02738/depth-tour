@@ -83,7 +83,7 @@ export default function CTABanner() {
           className="text-xs font-semibold tracking-[0.22em] uppercase mb-6"
           style={{ color: "#6366f1" }}
         >
-          Ready to stand out?
+          The window is open — for now.
         </p>
 
         <h2
@@ -100,8 +100,9 @@ export default function CTABanner() {
           className="text-lg mb-12 max-w-xl mx-auto leading-relaxed"
           style={{ color: "#555555" }}
         >
-          Ten outreach messages gets you one client. One client gets you the
-          next three.
+          Right now, your market probably has zero operators offering Gaussian
+          Splatting tours. That changes in 12 months. First mover wins the
+          referral loop.
         </p>
 
         <MagneticBtn
@@ -112,7 +113,7 @@ export default function CTABanner() {
               "0 0 40px rgba(99,102,241,0.6), 0 0 80px rgba(99,102,241,0.25)",
           }}
         >
-          Book a Scan Today →
+          Book Your First Scan →
         </MagneticBtn>
 
         <p className="text-sm mt-6" style={{ color: "#2a2a2a" }}>

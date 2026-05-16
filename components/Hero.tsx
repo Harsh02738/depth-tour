@@ -44,7 +44,7 @@ function useScramble(target: string, delay = 500): string {
 }
 
 export default function Hero() {
-  const headline = useScramble("Walk Through Any Property.", 600);
+  const headline = useScramble("Real estate photos just became flip phones.", 600);
 
   const particles = useMemo(
     () =>
@@ -130,7 +130,7 @@ export default function Hero() {
                   boxShadow: "0 0 8px rgba(129,140,248,0.9)",
                 }}
               />
-              Now available in your city
+              Gaussian Splatting · Now available
             </div>
 
             {/* Scramble headline */}
@@ -153,16 +153,16 @@ export default function Hero() {
               className="gradient-text font-bold leading-tight mb-6"
               style={{ fontSize: "clamp(38px, 5.5vw, 72px)", lineHeight: 1.05 }}
             >
-              Before You&apos;re There.
+              The upgrade is called Gaussian Splatting.
             </h2>
 
             <p
               className="text-lg leading-relaxed mb-10 max-w-xl"
               style={{ color: "#666666" }}
             >
-              DepthTour turns any property into a fully immersive 3D space your
-              buyers can walk through on any device — no app, no headset, just
-              one link.
+              DepthTour turns any property into a photoreal, navigable 3D space
+              your buyers walk through in a browser — no headset, no app, no
+              hardware from you. Just one link.
             </p>
 
             {/* CTAs */}
@@ -188,7 +188,7 @@ export default function Hero() {
             {/* Social proof pills */}
             <div className="flex flex-wrap gap-3">
               {[
-                { icon: "✓", text: "No hardware needed" },
+                { icon: "✓", text: "Photoreal depth" },
                 { icon: "✓", text: "Same-day delivery" },
                 { icon: "✓", text: "Any device" },
               ].map((item) => (

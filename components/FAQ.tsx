@@ -4,28 +4,28 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "What equipment do you use?",
-    a: "We use professional mobile equipment to capture every detail of the property. No special setup or hardware is needed from your side — just give us access.",
+    q: "What is Gaussian Splatting?",
+    a: "An AI technique that turns hundreds of photos into a real-time 3D environment you can explore in a browser. It handles reflections, glass, and complex surfaces that broke every previous scanning method. Think of it as the leap from DVD to 4K streaming — it just looks fundamentally better.",
   },
   {
-    q: "How long does a scan take?",
-    a: "The on-site capture typically takes 60–90 minutes depending on property size. Your shareable tour link is delivered the same day.",
-  },
-  {
-    q: "Can buyers view it without downloading anything?",
-    a: "Yes. The tour opens directly in any modern browser — Safari, Chrome, Firefox. No app download, no account, no headset. Just a link they tap on their phone.",
+    q: "How is this different from Matterport?",
+    a: "Matterport requires a $40k+ proprietary scanner and a $500/yr hosting subscription. Your buyers also need to download their app. We use Gaussian Splatting — you get a simple shareable link, nothing to install, nothing to subscribe to.",
   },
   {
     q: "How is this different from a 360° photo tour?",
-    a: "360° tours are flat panoramic photos you teleport between. Our tours are true 3D spaces — buyers can move freely in any direction, lean around corners, and experience real spatial depth. Far more immersive.",
+    a: "360° tours are flat panoramic photos you teleport between. There's no actual depth. Gaussian Splatting creates a true navigable 3D space where buyers move freely in any direction and see real spatial depth, exactly as they would standing in the room.",
   },
   {
-    q: "Do you travel to properties?",
-    a: "Yes. We travel to your listings to do the capture. Just send us the address and preferred time. We cover a reasonable radius — contact us to confirm your area.",
+    q: "How long does a scan take?",
+    a: "On-site capture takes 60–90 minutes depending on property size. Your shareable tour link is delivered the same day we visit.",
   },
   {
-    q: "What happens after 30 days of hosting?",
-    a: "Basic scans are hosted for 30 days. Pro scans are hosted for 90 days. After that, the tour link expires. You can extend hosting at any time for a small fee.",
+    q: "Do I need to provide any equipment?",
+    a: "Nothing. We bring everything. No scanner to rent, no special phone, no tripod. Just give us access to the property and we handle the rest.",
+  },
+  {
+    q: "What devices can buyers use to view the tour?",
+    a: "Any modern device — iPhone, Android, laptop, desktop. The tour opens directly in Safari, Chrome, or Firefox. No app download, no account, no headset required.",
   },
 ];
 

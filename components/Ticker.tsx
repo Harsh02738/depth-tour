@@ -9,6 +9,10 @@ const items = [
   "Luxury Apartments",
   "New Builds",
   "Student Housing",
+  "Wedding Venues",
+  "Museums",
+  "Hotels",
+  "Warehouses",
 ];
 
 export default function Ticker() {

@@ -3,10 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 
 const stats = [
-  { num: 200, suffix: "+", label: "Tours Delivered",   color: "#818cf8" },
-  { num: 2,   suffix: "h",  label: "Max Delivery Time", color: "#a78bfa" },
-  { num: 0,   suffix: "",   label: "Hardware Needed",   color: "#22d3ee" },
-  { num: 100, suffix: "%",  label: "Browser-Based",     color: "#34d399" },
+  { num: 200, suffix: "+", label: "Scans Delivered",     color: "#818cf8" },
+  { num: 2,   suffix: "h",  label: "Booking to Live Link", color: "#a78bfa" },
+  { num: 0,   suffix: "",   label: "Monthly Subscription", color: "#22d3ee" },
+  { num: 100, suffix: "%",  label: "Browser-Based",        color: "#34d399" },
 ];
 
 function Counter({

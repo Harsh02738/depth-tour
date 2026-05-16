@@ -29,6 +29,7 @@ export default function Footer() {
             </p>
             {[
               { label: "How it works", href: "#how-it-works" },
+              { label: "Pricing",      href: "#pricing" },
               { label: "Book a Scan",  href: "#book" },
               { label: "FAQ",          href: "#faq" },
             ].map((link) => (

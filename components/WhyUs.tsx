@@ -11,7 +11,7 @@ const features = [
     accentBorder: "rgba(129,140,248,0.2)",
     stat: "< 2h",
     label: "Delivery Time",
-    desc: "We capture, process, and deliver your shareable tour link — all the same day.",
+    desc: "We capture, process, and publish. Your shareable link is live the same day we visit.",
     emoji: "⚡",
   },
   {
@@ -20,10 +20,10 @@ const features = [
     accent: "#a78bfa",
     accentBg: "rgba(167,139,250,0.07)",
     accentBorder: "rgba(167,139,250,0.2)",
-    stat: "$0",
-    label: "Hardware From You",
-    desc: "We bring everything. No scanner, no iPhone, no tripod — just a door to unlock.",
-    emoji: "🔑",
+    stat: "True 3D",
+    label: "Not 360° Photos",
+    desc: "Buyers move freely through real spatial depth. Reflections, glass, and glossy floors — Gaussian Splatting captures what every other method breaks on.",
+    emoji: "🔮",
   },
   {
     id: "fee",
@@ -31,10 +31,10 @@ const features = [
     accent: "#34d399",
     accentBg: "rgba(52,211,153,0.07)",
     accentBorder: "rgba(52,211,153,0.2)",
-    stat: "$0/mo",
-    label: "Monthly Fee",
-    desc: "No subscription. Pay per scan only.",
-    emoji: "💳",
+    stat: "$0",
+    label: "Matterport Equipment",
+    desc: "No $40k scanner. No $500/yr subscription. No app for your buyers to install.",
+    emoji: "🏠",
   },
   {
     id: "device",
@@ -44,7 +44,7 @@ const features = [
     accentBorder: "rgba(34,211,238,0.2)",
     stat: "100%",
     label: "Browser-Based",
-    desc: "Buyers open it on any device — iPhone, Android, laptop. No app to download.",
+    desc: "Safari, Chrome, Firefox. iPhone, Android, laptop. Opens instantly — no account, no headset.",
     emoji: "📱",
   },
   {
@@ -55,7 +55,7 @@ const features = [
     accentBorder: "rgba(244,114,182,0.2)",
     stat: "50% off",
     label: "First Scan Discount",
-    desc: "New clients get their first scan at half price. No code needed — just mention it when you book.",
+    desc: "New clients get their first tour at half price. No code needed — just mention it when you book.",
     emoji: "🎁",
   },
 ];
@@ -144,7 +144,7 @@ export default function WhyUs() {
           >
             Everything Matterport offers.
             <br />
-            <span className="gradient-text">Nothing it requires.</span>
+            <span className="gradient-text">None of what it costs.</span>
           </h2>
         </div>
 

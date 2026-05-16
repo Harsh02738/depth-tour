@@ -4,6 +4,7 @@ import Ticker from "@/components/Ticker";
 import Stats from "@/components/Stats";
 import HowItWorks from "@/components/HowItWorks";
 import WhyUs from "@/components/WhyUs";
+import Pricing from "@/components/Pricing";
 import BookingForm from "@/components/BookingForm";
 import FAQ from "@/components/FAQ";
 import CTABanner from "@/components/CTABanner";
@@ -25,6 +26,7 @@ export default function Page() {
         <Stats />
         <HowItWorks />
         <WhyUs />
+        <Pricing />
         <BookingForm />
         <FAQ />
         <CTABanner />

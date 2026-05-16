@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DepthTour — Photoreal 3D Property Tours",
+  title: "DepthTour — Gaussian Splatting 3D Property Tours",
   description:
-    "DepthTour turns a phone walkthrough into a browser-based 3D tour your buyers can explore on any device. No app. No headset. Just a link.",
+    "DepthTour turns a phone walkthrough into a photoreal Gaussian Splatting tour your buyers can explore in any browser. No app, no headset, no Matterport subscription.",
   openGraph: {
-    title: "DepthTour — Photoreal 3D Property Tours",
+    title: "DepthTour — Gaussian Splatting 3D Property Tours",
     description:
-      "Walk through any property before you're there. Gaussian Splatting 3D tours for real estate agents.",
+      "DepthTour turns a phone walkthrough into a photoreal Gaussian Splatting tour your buyers can explore in any browser. No app, no headset, no Matterport subscription.",
     type: "website",
   },
 };

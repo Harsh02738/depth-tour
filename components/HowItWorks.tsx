@@ -9,19 +9,19 @@ const steps = [
     accentColor: "rgba(99,102,241,0.18)",
     accentBorder: "rgba(99,102,241,0.3)",
     glowColor: "rgba(99,102,241,0.08)",
-    title: "Book a Visit",
+    title: "Book a Scan",
     description:
-      "Pick a date. We come to your listing — no setup, no preparation needed on your end. Just unlock the door.",
+      "Tell us the address and preferred time. We come to you — no equipment to set up, no prep needed. Just give us access.",
   },
   {
     number: "02",
-    emoji: "⚡",
+    emoji: "📸",
     accentColor: "rgba(139,92,246,0.18)",
     accentBorder: "rgba(139,92,246,0.3)",
     glowColor: "rgba(139,92,246,0.08)",
-    title: "We Handle Everything",
+    title: "We Capture. AI Builds It.",
     description:
-      "Our team spends time at the property and has your 3D tour ready within hours. No back-and-forth, no waiting days.",
+      "We walk the property with a single phone. 200+ captures feed the Gaussian Splatting AI. Your 3D scene trains in the cloud and is ready within hours.",
   },
   {
     number: "03",
@@ -29,9 +29,9 @@ const steps = [
     accentColor: "rgba(6,182,212,0.18)",
     accentBorder: "rgba(6,182,212,0.3)",
     glowColor: "rgba(6,182,212,0.08)",
-    title: "Share. Impress. Win.",
+    title: "Share One Link.",
     description:
-      "Send your buyers one link. They walk through every room in full depth — on any device, before they've set foot inside.",
+      "Send your buyers a URL. They walk through every room in full spatial depth — reflections, glass, and all — on any device before they've stepped foot inside.",
   },
 ];
 
@@ -47,7 +47,7 @@ export default function HowItWorks() {
             className="font-bold text-[#f5f0e8] tracking-tight leading-tight"
             style={{ fontSize: "clamp(32px, 4.5vw, 54px)" }}
           >
-            From booking to published tour.
+            From your door to their screen.
             <br />
             <span className="gradient-text">Same day.</span>
           </h2>
