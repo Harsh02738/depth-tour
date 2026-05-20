@@ -59,16 +59,16 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: "#090909" }}
     >
-      {/* ── Video background (desktop only) ── */}
+      {/* ── Video background (all devices) ── */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        preload="none"
+        preload="auto"
         poster="/poster.jpg"
         onCanPlay={() => setVideoReady(true)}
-        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        className="absolute inset-0 w-full h-full object-cover"
         style={{
           opacity: videoReady ? 1 : 0,
           transition: "opacity 0.8s ease",
@@ -76,16 +76,6 @@ export default function Hero() {
       >
         <source src="/video.mp4" type="video/mp4" />
       </video>
-
-      {/* ── Mobile poster fallback ── */}
-      <div
-        className="absolute inset-0 md:hidden"
-        style={{
-          backgroundImage: "url('/poster.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
 
       {/* ── Gradient scrim ── */}
       <div
