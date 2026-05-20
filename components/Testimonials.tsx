@@ -7,9 +7,9 @@ const testimonials = [
     name: "Vikram Malhotra",
     role: "Real Estate Agent",
     city: "Mumbai",
-    accent: "#818cf8",
-    accentBg: "rgba(129,140,248,0.06)",
-    accentBorder: "rgba(129,140,248,0.18)",
+    accent: "#c4a882",
+    accentBg: "rgba(196,168,130,0.05)",
+    accentBorder: "rgba(196,168,130,0.18)",
   },
   {
     quote:
@@ -18,7 +18,7 @@ const testimonials = [
     role: "Airbnb Host",
     city: "Goa",
     accent: "#34d399",
-    accentBg: "rgba(52,211,153,0.06)",
+    accentBg: "rgba(52,211,153,0.05)",
     accentBorder: "rgba(52,211,153,0.18)",
   },
   {
@@ -27,9 +27,9 @@ const testimonials = [
     name: "Rahul Sharma",
     role: "Sales Director",
     city: "Bangalore",
-    accent: "#22d3ee",
-    accentBg: "rgba(34,211,238,0.06)",
-    accentBorder: "rgba(34,211,238,0.18)",
+    accent: "#c4a882",
+    accentBg: "rgba(196,168,130,0.04)",
+    accentBorder: "rgba(196,168,130,0.14)",
   },
 ];
 
@@ -38,21 +38,21 @@ export default function Testimonials() {
     <section
       className="py-28 px-6 relative"
       style={{
-        background: "#050505",
-        borderTop: "1px solid rgba(255,255,255,0.04)",
+        background: "#0d0c0b",
+        borderTop: "1px solid rgba(196,168,130,0.07)",
       }}
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 reveal">
           <p
             className="text-xs font-semibold tracking-[0.22em] uppercase mb-4"
-            style={{ color: "#6366f1" }}
+            style={{ color: "#c4a882" }}
           >
             Early results
           </p>
           <h2
-            className="font-bold text-[#f5f0e8] tracking-tight"
-            style={{ fontSize: "clamp(28px, 4vw, 48px)" }}
+            className="font-display font-light text-[#f5f2ee] tracking-tight"
+            style={{ fontSize: "clamp(28px, 4vw, 52px)" }}
           >
             What clients are saying.
           </h2>
@@ -65,10 +65,10 @@ export default function Testimonials() {
               className={`glass-card rounded-2xl p-8 flex flex-col reveal reveal-delay-${i + 1}`}
               style={{ borderColor: t.accentBorder, background: t.accentBg }}
             >
-              {/* Quote mark */}
+              {/* Quotation mark */}
               <div
-                className="text-5xl font-bold leading-none mb-4 select-none"
-                style={{ color: t.accent, opacity: 0.4, fontFamily: "Georgia, serif" }}
+                className="font-display text-5xl font-light leading-none mb-4 select-none"
+                style={{ color: t.accent, opacity: 0.5 }}
               >
                 &ldquo;
               </div>
@@ -80,7 +80,7 @@ export default function Testimonials() {
               {/* Stars */}
               <div className="flex gap-0.5 mb-4">
                 {Array.from({ length: 5 }).map((_, s) => (
-                  <span key={s} style={{ color: "#f59e0b", fontSize: "14px" }}>
+                  <span key={s} style={{ color: "#c4a882", fontSize: "14px" }}>
                     ★
                   </span>
                 ))}
@@ -95,7 +95,7 @@ export default function Testimonials() {
                   {t.name[0]}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-[#f5f0e8]">{t.name}</p>
+                  <p className="text-sm font-semibold text-[#f5f2ee]">{t.name}</p>
                   <p className="text-xs" style={{ color: "#555" }}>
                     {t.role} · {t.city}
                   </p>

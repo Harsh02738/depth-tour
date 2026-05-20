@@ -5,8 +5,8 @@ export default function Footer() {
     <footer
       className="px-6 py-14"
       style={{
-        background: "#050505",
-        borderTop: "1px solid rgba(255,255,255,0.05)",
+        background: "#090909",
+        borderTop: "1px solid rgba(196,168,130,0.07)",
       }}
     >
       <div className="max-w-6xl mx-auto">
@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <p
               className="text-xs font-semibold tracking-[0.15em] uppercase mb-1"
-              style={{ color: "#2a2a2a" }}
+              style={{ color: "#3d3b38" }}
             >
               Navigate
             </p>
@@ -38,7 +38,7 @@ export default function Footer() {
                 href={link.href}
                 className="text-sm transition-colors"
                 style={{ color: "#444444" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f0e8")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#c4a882")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#444444")}
               >
                 {link.label}
@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <p
               className="text-xs font-semibold tracking-[0.15em] uppercase mb-1"
-              style={{ color: "#2a2a2a" }}
+              style={{ color: "#3d3b38" }}
             >
               Contact Us
             </p>
@@ -58,7 +58,7 @@ export default function Footer() {
               href="mailto:harshshah1012004@gmail.com"
               className="text-sm transition-colors break-all"
               style={{ color: "#444444" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f0e8")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c4a882")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#444444")}
             >
               harshshah1012004@gmail.com
@@ -67,7 +67,7 @@ export default function Footer() {
               href="#"
               className="text-sm transition-colors"
               style={{ color: "#444444" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f0e8")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c4a882")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#444444")}
             >
               Instagram ↗
@@ -76,7 +76,7 @@ export default function Footer() {
               href="#"
               className="text-sm transition-colors"
               style={{ color: "#444444" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f0e8")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c4a882")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#444444")}
             >
               LinkedIn ↗
@@ -86,7 +86,7 @@ export default function Footer() {
 
         <div
           className="border-t pt-6 text-xs"
-          style={{ borderColor: "rgba(255,255,255,0.04)", color: "#2a2a2a" }}
+          style={{ borderColor: "rgba(196,168,130,0.07)", color: "#3d3b38" }}
         >
           © 2026 DepthTour. All rights reserved.
         </div>

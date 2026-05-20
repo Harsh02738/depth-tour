@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #050505;
-  --color-brand-surface: #0f0f0f;
-  --color-brand-border: #1a1a1a;
-  --color-brand-text: #f5f0e8;
-  --color-brand-muted: #888888;
-  --color-brand-accent: #6366f1;
-  --color-brand-accent-hover: #4f46e5;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-bg:           #090909;
+  --color-brand-surface:      #131210;
+  --color-brand-border:       rgba(196, 168, 130, 0.08);
+  --color-brand-text:         #f5f2ee;
+  --color-brand-muted:        #8a8580;
+  --color-brand-accent:       #c4a882;
+  --color-brand-accent-hover: #d4bc9a;
+  --font-display: var(--font-cormorant);
+  --font-sans:    var(--font-geist-sans);
+  --font-mono:    var(--font-geist-mono);
 }
 
 * {
@@ -21,11 +22,18 @@ html {
 }
 
 body {
-  background-color: #050505;
-  color: #f5f0e8;
+  background-color: #090909;
+  color: #f5f2ee;
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* ─── Display font utility ─── */
+.font-display {
+  font-family: var(--font-cormorant), 'Georgia', serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
 }
 
 /* ─── Ticker marquee ─── */
@@ -39,59 +47,51 @@ body {
 
 /* ─── Hero fade-in ─── */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(28px); }
+  from { opacity: 0; transform: translateY(36px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease forwards;
+  animation: fadeInUp 0.9s ease forwards;
+  opacity: 0;
 }
 
-/* ─── Aurora orb float ─── */
-@keyframes auroraFloat {
-  0%,  100% { transform: translate(0, 0)    scale(1);    }
-  33%        { transform: translate(30px, -24px) scale(1.06); }
-  66%        { transform: translate(-22px, 18px) scale(0.96); }
+/* ─── Scroll bounce hint ─── */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
 }
-.animate-aurora {
-  animation: auroraFloat 14s ease-in-out infinite;
+.animate-scroll-bounce {
+  animation: scrollBounce 2s ease-in-out infinite;
 }
 
-/* ─── Animated gradient text ─── */
+/* ─── Gold gradient text ─── */
 @keyframes gradientShift {
   0%,  100% { background-position: 0%   center; }
   50%        { background-position: 100% center; }
 }
 .gradient-text {
-  background: linear-gradient(90deg, #818cf8, #a78bfa, #22d3ee, #a78bfa, #818cf8);
+  background: linear-gradient(90deg, #c4a882, #f5f2ee, #c4a882, #8a6c4e, #c4a882);
   background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradientShift 7s ease infinite;
-}
-
-/* ─── Blueprint grid overlay ─── */
-.blueprint-grid {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 44px 44px;
+  animation: gradientShift 8s ease infinite;
 }
 
 /* ─── Glassmorphism card ─── */
 .glass-card {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(19, 18, 16, 0.85);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(196, 168, 130, 0.08);
 }
 
 .glass-card-hover {
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 .glass-card-hover:hover {
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.08);
+  border-color: rgba(196, 168, 130, 0.22);
+  box-shadow: 0 0 40px rgba(196, 168, 130, 0.06);
   transform: translateY(-3px);
 }
 
@@ -109,21 +109,6 @@ body {
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 
-/* ─── Glow button pulse ring ─── */
-@keyframes pulseRing {
-  0%   { transform: scale(1);   opacity: 0.6; }
-  100% { transform: scale(1.5); opacity: 0;   }
-}
-.glow-ring::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: rgba(99, 102, 241, 0.5);
-  animation: pulseRing 2s ease-out infinite;
-  pointer-events: none;
-}
-
 /* ─── Custom cursor (desktop hover only) ─── */
 @media (hover: hover) {
   html, a, button { cursor: none !important; }
@@ -133,7 +118,7 @@ body {
   position: fixed;
   width: 8px;
   height: 8px;
-  background: #ffffff;
+  background: #c4a882;
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
@@ -145,7 +130,7 @@ body {
   position: fixed;
   width: 36px;
   height: 36px;
-  border: 1.5px solid rgba(99, 102, 241, 0.75);
+  border: 1.5px solid rgba(196, 168, 130, 0.75);
   border-radius: 50%;
   pointer-events: none;
   z-index: 99998;
@@ -156,23 +141,7 @@ body {
 .cur-ring.cur-hover {
   width: 58px;
   height: 58px;
-  border-color: rgba(99, 102, 241, 1);
-}
-
-/* ─── Floating particles ─── */
-@keyframes particleDrift {
-  0%   { transform: translateY(0)     translateX(0)    scale(1);   opacity: 0; }
-  8%   { opacity: 1; }
-  92%  { opacity: 1; }
-  100% { transform: translateY(-130px) translateX(28px) scale(0.4); opacity: 0; }
-}
-
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(99, 102, 241, 0.5);
-  animation: particleDrift linear infinite;
-  pointer-events: none;
+  border-color: rgba(196, 168, 130, 1);
 }
 
 /* ─── SVG circle draw ─── */
@@ -180,7 +149,7 @@ body {
   to { stroke-dashoffset: 0; }
 }
 
-/* ─── Scan line ─── */
+/* ─── Scan line (kept for reuse) ─── */
 @keyframes scanLine {
   0%   { transform: translateY(-10%); opacity: 0; }
   5%   { opacity: 1; }
@@ -194,12 +163,31 @@ body {
   50%       { opacity: 0.9;  transform: scale(1.4); }
 }
 
-/* ─── Subtle spin ─── */
-@keyframes slowSpin {
-  from { transform: rotate(0deg);   }
-  to   { transform: rotate(360deg); }
+/* ─── Gold shimmer line ─── */
+@keyframes goldShimmer {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.7; }
 }
-@keyframes slowSpinReverse {
-  from { transform: rotate(0deg);    }
-  to   { transform: rotate(-360deg); }
+.animate-gold-shimmer {
+  animation: goldShimmer 4s ease-in-out infinite;
+}
+
+/* ─── Aurora float (kept for CTA banner warm glow) ─── */
+@keyframes auroraFloat {
+  0%,  100% { transform: translate(0, 0)    scale(1);    }
+  33%        { transform: translate(30px, -24px) scale(1.06); }
+  66%        { transform: translate(-22px, 18px) scale(0.96); }
+}
+.animate-aurora {
+  animation: auroraFloat 14s ease-in-out infinite;
+}
+
+/* ─── Video accessibility ─── */
+@media (prefers-reduced-motion: reduce) {
+  video { display: none !important; }
+  .animate-fade-in-up,
+  .animate-scroll-bounce,
+  .animate-marquee,
+  .animate-aurora,
+  .animate-gold-shimmer { animation: none !important; opacity: 1 !important; }
 }

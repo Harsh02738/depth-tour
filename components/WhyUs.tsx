@@ -6,9 +6,9 @@ const features = [
   {
     id: "delivery",
     span: "col-span-2",
-    accent: "#818cf8",
-    accentBg: "rgba(129,140,248,0.07)",
-    accentBorder: "rgba(129,140,248,0.2)",
+    accent: "#c4a882",
+    accentBg: "rgba(196,168,130,0.07)",
+    accentBorder: "rgba(196,168,130,0.22)",
     stat: "< 2h",
     label: "Delivery Time",
     desc: "We capture, process, and publish. Your shareable link is live the same day we visit.",
@@ -17,9 +17,9 @@ const features = [
   {
     id: "hardware",
     span: "row-span-2",
-    accent: "#a78bfa",
-    accentBg: "rgba(167,139,250,0.07)",
-    accentBorder: "rgba(167,139,250,0.2)",
+    accent: "#c4a882",
+    accentBg: "rgba(196,168,130,0.07)",
+    accentBorder: "rgba(196,168,130,0.22)",
     stat: "True 3D",
     label: "Not 360° Photos",
     desc: "Buyers move freely through real spatial depth. Reflections, glass, and glossy floors — Gaussian Splatting captures what every other method breaks on.",
@@ -39,9 +39,9 @@ const features = [
   {
     id: "device",
     span: "",
-    accent: "#22d3ee",
-    accentBg: "rgba(34,211,238,0.07)",
-    accentBorder: "rgba(34,211,238,0.2)",
+    accent: "#c4a882",
+    accentBg: "rgba(196,168,130,0.05)",
+    accentBorder: "rgba(196,168,130,0.18)",
     stat: "100%",
     label: "Browser-Based",
     desc: "Safari, Chrome, Firefox. iPhone, Android, laptop. Opens instantly — no account, no headset.",
@@ -73,13 +73,12 @@ function BentoCard({
         className={`relative glass-card rounded-2xl p-7 h-full flex flex-col transition-all duration-300 ${
           isRowSpan ? "justify-between" : ""
         }`}
-        style={{ borderColor: "rgba(255,255,255,0.06)" }}
         onMouseEnter={(e) => {
           (e.currentTarget as HTMLDivElement).style.borderColor = f.accentBorder;
           (e.currentTarget as HTMLDivElement).style.background = f.accentBg;
         }}
         onMouseLeave={(e) => {
-          (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.06)";
+          (e.currentTarget as HTMLDivElement).style.borderColor = "";
           (e.currentTarget as HTMLDivElement).style.background = "";
         }}
       >
@@ -126,21 +125,21 @@ export default function WhyUs() {
     <section
       className="py-32 px-6 relative"
       style={{
-        background: "#080808",
-        borderTop: "1px solid rgba(255,255,255,0.04)",
+        background: "#0a0908",
+        borderTop: "1px solid rgba(196,168,130,0.07)",
       }}
     >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-20 reveal">
           <p
             className="text-xs font-semibold tracking-[0.22em] uppercase mb-4"
-            style={{ color: "#6366f1" }}
+            style={{ color: "#c4a882" }}
           >
             Why DepthTour
           </p>
           <h2
-            className="font-bold text-[#f5f0e8] tracking-tight leading-tight"
-            style={{ fontSize: "clamp(32px, 4.5vw, 54px)" }}
+            className="font-display font-light text-[#f5f2ee] tracking-tight leading-tight"
+            style={{ fontSize: "clamp(32px, 4.5vw, 58px)" }}
           >
             Everything Matterport offers.
             <br />
@@ -148,9 +147,9 @@ export default function WhyUs() {
           </h2>
         </div>
 
-        {/* Bento grid */}
+        {/* Bento grid — desktop */}
         <div
-          className="grid gap-3 reveal"
+          className="hidden md:grid gap-3 reveal"
           style={{
             gridTemplateColumns: "repeat(3, 1fr)",
             gridTemplateRows: "auto auto auto",
@@ -158,25 +157,15 @@ export default function WhyUs() {
               '"delivery delivery hardware" "fee device hardware" "offer offer offer"',
           }}
         >
-          <div style={{ gridArea: "delivery" }}>
-            <BentoCard f={features[0]} />
-          </div>
-          <div style={{ gridArea: "hardware" }}>
-            <BentoCard f={features[1]} isRowSpan />
-          </div>
-          <div style={{ gridArea: "fee" }}>
-            <BentoCard f={features[2]} />
-          </div>
-          <div style={{ gridArea: "device" }}>
-            <BentoCard f={features[3]} />
-          </div>
-          <div style={{ gridArea: "offer" }}>
-            <BentoCard f={features[4]} />
-          </div>
+          <div style={{ gridArea: "delivery" }}><BentoCard f={features[0]} /></div>
+          <div style={{ gridArea: "hardware" }}><BentoCard f={features[1]} isRowSpan /></div>
+          <div style={{ gridArea: "fee" }}><BentoCard f={features[2]} /></div>
+          <div style={{ gridArea: "device" }}><BentoCard f={features[3]} /></div>
+          <div style={{ gridArea: "offer" }}><BentoCard f={features[4]} /></div>
         </div>
 
-        {/* Mobile fallback grid */}
-        <div className="md:hidden grid grid-cols-1 gap-3 mt-3">
+        {/* Mobile fallback */}
+        <div className="md:hidden grid grid-cols-1 gap-3">
           {features.map((f) => (
             <BentoCard key={f.id} f={f} />
           ))}

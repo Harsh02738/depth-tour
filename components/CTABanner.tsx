@@ -11,7 +11,7 @@ export default function CTABanner() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          svgRef.current?.querySelectorAll("circle").forEach((c, i) => {
+          svgRef.current?.querySelectorAll("circle").forEach((c) => {
             c.style.animationPlayState = "running";
           });
         }
@@ -27,22 +27,22 @@ export default function CTABanner() {
       id="cta"
       className="py-36 px-6 relative overflow-hidden"
       style={{
-        background: "#050505",
-        borderTop: "1px solid rgba(255,255,255,0.04)",
+        background: "#090909",
+        borderTop: "1px solid rgba(196,168,130,0.07)",
       }}
     >
-      {/* Aurora orbs */}
+      {/* Warm aurora orbs */}
       <div
         className="absolute top-[-20%] left-[-5%] w-[600px] h-[600px] rounded-full pointer-events-none animate-aurora"
         style={{
-          background: "radial-gradient(circle, rgba(99,102,241,0.32) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(196,168,130,0.12) 0%, transparent 65%)",
           filter: "blur(70px)",
         }}
       />
       <div
         className="absolute bottom-[-20%] right-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none animate-aurora"
         style={{
-          background: "radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(196,168,130,0.08) 0%, transparent 65%)",
           filter: "blur(65px)",
           animationDelay: "-6s",
         }}
@@ -65,7 +65,7 @@ export default function CTABanner() {
               cy="250"
               r={r}
               fill="none"
-              stroke="rgba(99,102,241,0.1)"
+              stroke="rgba(196,168,130,0.1)"
               strokeWidth="1"
               strokeDasharray={circumference}
               strokeDashoffset={circumference}
@@ -81,14 +81,14 @@ export default function CTABanner() {
       <div className="relative z-10 max-w-3xl mx-auto text-center reveal">
         <p
           className="text-xs font-semibold tracking-[0.22em] uppercase mb-6"
-          style={{ color: "#6366f1" }}
+          style={{ color: "#c4a882" }}
         >
           The window is open — for now.
         </p>
 
         <h2
-          className="font-bold text-[#f5f0e8] tracking-tight mb-6 leading-tight"
-          style={{ fontSize: "clamp(36px, 5.5vw, 68px)" }}
+          className="font-display font-light text-[#f5f2ee] tracking-tight mb-6 leading-tight"
+          style={{ fontSize: "clamp(40px, 5.5vw, 72px)" }}
         >
           Be the first agent
           <br />
@@ -107,16 +107,25 @@ export default function CTABanner() {
 
         <MagneticBtn
           href="#book"
-          className="relative inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-14 py-5 rounded-full text-lg transition-colors"
+          className="relative inline-block font-medium px-14 py-5 rounded-full text-lg transition-all"
           style={{
-            boxShadow:
-              "0 0 40px rgba(99,102,241,0.6), 0 0 80px rgba(99,102,241,0.25)",
+            background: "#c4a882",
+            color: "#090909",
+            boxShadow: "0 0 40px rgba(196,168,130,0.4), 0 0 80px rgba(196,168,130,0.15)",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLElement).style.background = "#d4bc9a";
+            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 50px rgba(196,168,130,0.55), 0 0 100px rgba(196,168,130,0.2)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLElement).style.background = "#c4a882";
+            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 40px rgba(196,168,130,0.4), 0 0 80px rgba(196,168,130,0.15)";
           }}
         >
           Book Your First Scan →
         </MagneticBtn>
 
-        <p className="text-sm mt-6" style={{ color: "#2a2a2a" }}>
+        <p className="text-sm mt-6" style={{ color: "#3d3b38" }}>
           First scan at half price for new clients.
         </p>
       </div>

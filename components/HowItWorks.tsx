@@ -6,9 +6,9 @@ const steps = [
   {
     number: "01",
     emoji: "📅",
-    accentColor: "rgba(99,102,241,0.18)",
-    accentBorder: "rgba(99,102,241,0.3)",
-    glowColor: "rgba(99,102,241,0.08)",
+    accentColor: "rgba(196,168,130,0.12)",
+    accentBorder: "rgba(196,168,130,0.3)",
+    glowColor: "rgba(196,168,130,0.06)",
     title: "Book a Scan",
     description:
       "Tell us the address and preferred time. We come to you — no equipment to set up, no prep needed. Just give us access.",
@@ -16,9 +16,9 @@ const steps = [
   {
     number: "02",
     emoji: "📸",
-    accentColor: "rgba(139,92,246,0.18)",
-    accentBorder: "rgba(139,92,246,0.3)",
-    glowColor: "rgba(139,92,246,0.08)",
+    accentColor: "rgba(196,168,130,0.18)",
+    accentBorder: "rgba(196,168,130,0.38)",
+    glowColor: "rgba(196,168,130,0.09)",
     title: "We Capture. AI Builds It.",
     description:
       "We walk the property with a single phone. 200+ captures feed the Gaussian Splatting AI. Your 3D scene trains in the cloud and is ready within hours.",
@@ -26,9 +26,9 @@ const steps = [
   {
     number: "03",
     emoji: "🔗",
-    accentColor: "rgba(6,182,212,0.18)",
-    accentBorder: "rgba(6,182,212,0.3)",
-    glowColor: "rgba(6,182,212,0.08)",
+    accentColor: "rgba(196,168,130,0.08)",
+    accentBorder: "rgba(196,168,130,0.22)",
+    glowColor: "rgba(196,168,130,0.05)",
     title: "Share One Link.",
     description:
       "Send your buyers a URL. They walk through every room in full spatial depth — reflections, glass, and all — on any device before they've stepped foot inside.",
@@ -37,15 +37,18 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-32 px-6 relative" style={{ background: "#050505" }}>
+    <section id="how-it-works" className="py-32 px-6 relative" style={{ background: "#090909" }}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20 reveal">
-          <p className="text-xs font-semibold tracking-[0.22em] uppercase mb-4" style={{ color: "#6366f1" }}>
+          <p
+            className="text-xs font-semibold tracking-[0.22em] uppercase mb-4"
+            style={{ color: "#c4a882" }}
+          >
             How it works
           </p>
           <h2
-            className="font-bold text-[#f5f0e8] tracking-tight leading-tight"
-            style={{ fontSize: "clamp(32px, 4.5vw, 54px)" }}
+            className="font-display font-light text-[#f5f2ee] tracking-tight leading-tight"
+            style={{ fontSize: "clamp(32px, 4.5vw, 58px)" }}
           >
             From your door to their screen.
             <br />
@@ -77,7 +80,7 @@ export default function HowItWorks() {
                   style={{
                     fontSize: "clamp(90px, 14vw, 140px)",
                     lineHeight: 1,
-                    color: "rgba(255,255,255,0.025)",
+                    color: "rgba(196,168,130,0.04)",
                     letterSpacing: "-0.04em",
                   }}
                 >
@@ -95,7 +98,9 @@ export default function HowItWorks() {
                   {step.emoji}
                 </div>
 
-                <h3 className="text-lg font-semibold text-[#f5f0e8] mb-3 tracking-tight">
+                <h3
+                  className="text-lg font-semibold text-[#f5f2ee] mb-3 tracking-tight"
+                >
                   {step.title}
                 </h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#5a5a5a" }}>

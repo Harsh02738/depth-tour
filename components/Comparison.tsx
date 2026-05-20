@@ -53,20 +53,16 @@ const rows: { feature: string; depth: Cell; matterport: Cell; t360: Cell }[] = [
   },
 ];
 
-function CellDisplay({ cell, highlight }: { cell: Cell; highlight: boolean }) {
+function CellDisplay({ cell }: { cell: Cell }) {
   const color =
-    cell.good === true
-      ? highlight
-        ? "#34d399"
-        : "#34d399"
-      : cell.good === false
-      ? "#ef4444"
-      : "#666666";
+    cell.good === true  ? "#34d399" :
+    cell.good === false ? "#ef4444" :
+                          "#555555";
 
   return (
     <td
       className="py-4 px-5 text-sm font-medium text-center"
-      style={{ color, borderBottom: "1px solid rgba(255,255,255,0.04)" }}
+      style={{ color, borderBottom: "1px solid rgba(196,168,130,0.05)" }}
     >
       {cell.v}
     </td>
@@ -78,21 +74,21 @@ export default function Comparison() {
     <section
       className="py-32 px-6 relative overflow-x-auto"
       style={{
-        background: "#080808",
-        borderTop: "1px solid rgba(255,255,255,0.04)",
+        background: "#0a0908",
+        borderTop: "1px solid rgba(196,168,130,0.07)",
       }}
     >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16 reveal">
           <p
             className="text-xs font-semibold tracking-[0.22em] uppercase mb-4"
-            style={{ color: "#6366f1" }}
+            style={{ color: "#c4a882" }}
           >
             How it compares
           </p>
           <h2
-            className="font-bold text-[#f5f0e8] tracking-tight leading-tight"
-            style={{ fontSize: "clamp(32px, 4.5vw, 54px)" }}
+            className="font-display font-light text-[#f5f2ee] tracking-tight leading-tight"
+            style={{ fontSize: "clamp(32px, 4.5vw, 58px)" }}
           >
             Why Gaussian Splatting
             <br />
@@ -100,7 +96,10 @@ export default function Comparison() {
           </h2>
         </div>
 
-        <div className="reveal overflow-x-auto rounded-2xl" style={{ border: "1px solid rgba(255,255,255,0.06)" }}>
+        <div
+          className="reveal overflow-x-auto rounded-2xl"
+          style={{ border: "1px solid rgba(196,168,130,0.1)" }}
+        >
           <table className="w-full min-w-[600px] border-collapse">
             <thead>
               <tr>
@@ -108,28 +107,28 @@ export default function Comparison() {
                   className="py-5 px-5 text-left text-xs font-semibold tracking-widest uppercase"
                   style={{
                     color: "#333",
-                    borderBottom: "1px solid rgba(255,255,255,0.06)",
-                    background: "#080808",
+                    borderBottom: "1px solid rgba(196,168,130,0.08)",
+                    background: "#0a0908",
                     width: "38%",
                   }}
                 >
                   Feature
                 </th>
-                {/* DepthTour — highlighted */}
+                {/* DepthTour — highlighted column */}
                 <th
                   className="py-5 px-5 text-center text-sm font-bold"
                   style={{
-                    color: "#a5b4fc",
-                    borderBottom: "1px solid rgba(99,102,241,0.3)",
-                    background: "rgba(99,102,241,0.06)",
-                    borderLeft: "1px solid rgba(99,102,241,0.2)",
-                    borderRight: "1px solid rgba(99,102,241,0.2)",
+                    color: "#c4a882",
+                    borderBottom: "1px solid rgba(196,168,130,0.3)",
+                    background: "rgba(196,168,130,0.05)",
+                    borderLeft: "1px solid rgba(196,168,130,0.18)",
+                    borderRight: "1px solid rgba(196,168,130,0.18)",
                   }}
                 >
                   DepthTour
                   <span
                     className="block text-[10px] font-medium mt-0.5 tracking-widest uppercase"
-                    style={{ color: "#6366f1" }}
+                    style={{ color: "rgba(196,168,130,0.6)" }}
                   >
                     Gaussian Splatting
                   </span>
@@ -138,8 +137,8 @@ export default function Comparison() {
                   className="py-5 px-5 text-center text-sm font-semibold"
                   style={{
                     color: "#444",
-                    borderBottom: "1px solid rgba(255,255,255,0.06)",
-                    background: "#080808",
+                    borderBottom: "1px solid rgba(196,168,130,0.06)",
+                    background: "#0a0908",
                   }}
                 >
                   Matterport
@@ -148,8 +147,8 @@ export default function Comparison() {
                   className="py-5 px-5 text-center text-sm font-semibold"
                   style={{
                     color: "#444",
-                    borderBottom: "1px solid rgba(255,255,255,0.06)",
-                    background: "#080808",
+                    borderBottom: "1px solid rgba(196,168,130,0.06)",
+                    background: "#0a0908",
                   }}
                 >
                   360° Tour
@@ -158,13 +157,13 @@ export default function Comparison() {
             </thead>
             <tbody>
               {rows.map((row) => (
-                <tr key={row.feature} className="group">
+                <tr key={row.feature}>
                   <td
                     className="py-4 px-5 text-sm"
                     style={{
                       color: "#666",
-                      borderBottom: "1px solid rgba(255,255,255,0.04)",
-                      background: "#080808",
+                      borderBottom: "1px solid rgba(196,168,130,0.05)",
+                      background: "#0a0908",
                     }}
                   >
                     {row.feature}
@@ -174,16 +173,16 @@ export default function Comparison() {
                     className="py-4 px-5 text-sm font-semibold text-center"
                     style={{
                       color: row.depth.good === true ? "#34d399" : row.depth.good === false ? "#ef4444" : "#666",
-                      borderBottom: "1px solid rgba(99,102,241,0.12)",
-                      background: "rgba(99,102,241,0.04)",
-                      borderLeft: "1px solid rgba(99,102,241,0.15)",
-                      borderRight: "1px solid rgba(99,102,241,0.15)",
+                      borderBottom: "1px solid rgba(196,168,130,0.08)",
+                      background: "rgba(196,168,130,0.03)",
+                      borderLeft: "1px solid rgba(196,168,130,0.12)",
+                      borderRight: "1px solid rgba(196,168,130,0.12)",
                     }}
                   >
                     {row.depth.v}
                   </td>
-                  <CellDisplay cell={row.matterport} highlight={false} />
-                  <CellDisplay cell={row.t360} highlight={false} />
+                  <CellDisplay cell={row.matterport} />
+                  <CellDisplay cell={row.t360} />
                 </tr>
               ))}
             </tbody>

@@ -36,17 +36,23 @@ export default function FAQ() {
     <section
       id="faq"
       className="py-32 px-6"
-      style={{ background: "#080808", borderTop: "1px solid rgba(255,255,255,0.04)" }}
+      style={{
+        background: "#090909",
+        borderTop: "1px solid rgba(196,168,130,0.07)",
+      }}
     >
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-20 reveal">
           <p
             className="text-xs font-semibold tracking-[0.2em] uppercase mb-4"
-            style={{ color: "#6366f1" }}
+            style={{ color: "#c4a882" }}
           >
             FAQ
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#f5f0e8] tracking-tight">
+          <h2
+            className="font-display font-light text-[#f5f2ee] tracking-tight"
+            style={{ fontSize: "clamp(36px, 4.5vw, 58px)" }}
+          >
             Questions <span className="gradient-text">answered.</span>
           </h2>
         </div>
@@ -71,10 +77,14 @@ export default function FAQ() {
                   style={{
                     background:
                       open === i
-                        ? "rgba(99,102,241,0.2)"
-                        : "rgba(255,255,255,0.05)",
-                    border: `1px solid ${open === i ? "rgba(99,102,241,0.4)" : "rgba(255,255,255,0.08)"}`,
-                    color: open === i ? "#818cf8" : "#555555",
+                        ? "rgba(196,168,130,0.15)"
+                        : "rgba(255,255,255,0.04)",
+                    border: `1px solid ${
+                      open === i
+                        ? "rgba(196,168,130,0.4)"
+                        : "rgba(255,255,255,0.08)"
+                    }`,
+                    color: open === i ? "#c4a882" : "#555555",
                     transform: open === i ? "rotate(45deg)" : "none",
                   }}
                 >
@@ -84,7 +94,7 @@ export default function FAQ() {
 
               <div
                 style={{
-                  maxHeight: open === i ? "200px" : "0",
+                  maxHeight: open === i ? "240px" : "0",
                   overflow: "hidden",
                   transition: "max-height 0.35s ease",
                 }}
@@ -93,7 +103,7 @@ export default function FAQ() {
                   className="px-6 pb-5 text-sm leading-relaxed"
                   style={{
                     color: "#666666",
-                    borderTop: "1px solid rgba(255,255,255,0.05)",
+                    borderTop: "1px solid rgba(196,168,130,0.07)",
                     paddingTop: "16px",
                   }}
                 >

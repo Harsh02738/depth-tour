@@ -22,20 +22,20 @@ export default function Ticker() {
     <div
       className="relative overflow-hidden py-5"
       style={{
-        background: "#080808",
-        borderTop: "1px solid rgba(255,255,255,0.05)",
-        borderBottom: "1px solid rgba(255,255,255,0.05)",
+        background: "#0d0c0b",
+        borderTop: "1px solid rgba(196,168,130,0.07)",
+        borderBottom: "1px solid rgba(196,168,130,0.07)",
       }}
     >
       {/* Left fade */}
       <div
         className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to right, #080808, transparent)" }}
+        style={{ background: "linear-gradient(to right, #0d0c0b, transparent)" }}
       />
       {/* Right fade */}
       <div
         className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to left, #080808, transparent)" }}
+        style={{ background: "linear-gradient(to left, #0d0c0b, transparent)" }}
       />
 
       <div className="flex animate-marquee whitespace-nowrap">

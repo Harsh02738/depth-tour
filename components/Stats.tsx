@@ -3,21 +3,19 @@
 import { useState, useEffect, useRef } from "react";
 
 const stats = [
-  { num: 200, suffix: "+", label: "Scans Delivered",       color: "#818cf8" },
-  { num: 0,   suffix: "",   label: "Competitors in India",  color: "#34d399" },
-  { num: 2,   suffix: "h",  label: "Booking to Live Link",  color: "#a78bfa" },
-  { num: 100, suffix: "%",  label: "Browser-Based",         color: "#22d3ee" },
+  { num: 200, suffix: "+", label: "Scans Delivered"      },
+  { num: 0,   suffix: "",   label: "Competitors in India" },
+  { num: 2,   suffix: "h",  label: "Booking to Live Link" },
+  { num: 100, suffix: "%",  label: "Browser-Based"        },
 ];
 
 function Counter({
   num,
   suffix,
-  color,
   duration = 1800,
 }: {
   num: number;
   suffix: string;
-  color: string;
   duration?: number;
 }) {
   const [count, setCount] = useState(0);
@@ -57,7 +55,7 @@ function Counter({
       style={{
         fontSize: "clamp(52px, 7vw, 88px)",
         lineHeight: 1,
-        background: `linear-gradient(135deg, ${color}, #ffffff88)`,
+        background: "linear-gradient(135deg, #c4a882, #f5f2ee)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         backgroundClip: "text",
@@ -74,9 +72,9 @@ export default function Stats() {
     <section
       className="py-20 px-6 relative overflow-hidden"
       style={{
-        background: "#080808",
-        borderTop: "1px solid rgba(255,255,255,0.04)",
-        borderBottom: "1px solid rgba(255,255,255,0.04)",
+        background: "#0d0c0b",
+        borderTop: "1px solid rgba(196,168,130,0.07)",
+        borderBottom: "1px solid rgba(196,168,130,0.07)",
       }}
     >
       {/* Subtle center glow */}
@@ -84,7 +82,7 @@ export default function Stats() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 50% 80% at 50% 50%, rgba(99,102,241,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse 50% 80% at 50% 50%, rgba(196,168,130,0.04) 0%, transparent 70%)",
         }}
       />
 
@@ -96,20 +94,19 @@ export default function Stats() {
           {stats.map((s, i) => (
             <div
               key={s.label}
-              className="flex flex-col items-center justify-center py-10 px-6 text-center relative"
+              className="flex flex-col items-center justify-center py-10 px-6 text-center"
               style={{
                 borderRight:
                   i < stats.length - 1
-                    ? "1px solid rgba(255,255,255,0.05)"
+                    ? "1px solid rgba(196,168,130,0.07)"
                     : "none",
                 borderBottom:
-                  i < 2 ? "1px solid rgba(255,255,255,0.05)" : "none",
+                  i < 2 ? "1px solid rgba(196,168,130,0.07)" : "none",
               }}
             >
               <Counter
                 num={s.num}
                 suffix={s.suffix}
-                color={s.color}
                 duration={1600 + i * 200}
               />
               <p

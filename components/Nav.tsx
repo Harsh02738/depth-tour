@@ -19,7 +19,7 @@ export default function Nav() {
       }`}
       style={
         scrolled
-          ? { borderColor: "rgba(255,255,255,0.06)" }
+          ? { borderColor: "rgba(196,168,130,0.1)" }
           : { borderColor: "transparent" }
       }
     >
@@ -40,12 +40,8 @@ export default function Nav() {
               href={link.href}
               className="text-sm transition-colors"
               style={{ color: "#555" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "#f5f0e8")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "#555")
-              }
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c4a882")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
             >
               {link.label}
             </a>
@@ -54,8 +50,19 @@ export default function Nav() {
 
         <MagneticBtn
           href="#book"
-          className="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
-          style={{ boxShadow: "0 0 20px rgba(99,102,241,0.45)" }}
+          className="text-[#f5f2ee] text-sm font-medium px-5 py-2.5 rounded-full transition-all"
+          style={{
+            border: "1px solid rgba(196,168,130,0.45)",
+            background: "transparent",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLElement).style.borderColor = "rgba(196,168,130,0.9)";
+            (e.currentTarget as HTMLElement).style.background = "rgba(196,168,130,0.05)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLElement).style.borderColor = "rgba(196,168,130,0.45)";
+            (e.currentTarget as HTMLElement).style.background = "transparent";
+          }}
         >
           Book a Scan →
         </MagneticBtn>
